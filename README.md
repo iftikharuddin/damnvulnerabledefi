@@ -24,4 +24,9 @@ Fix #1:
 await token.connect(player).transfer(vault.address, 10);
 ````
 
+#Fix #2:
+
+````
+await pool.connect(player).flashLoan(receiver.address, ETH, 0, "0x");
+````
 
