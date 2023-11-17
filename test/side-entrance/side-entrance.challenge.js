@@ -30,14 +30,11 @@ describe('[Challenge] Side entrance', function () {
             pool.address,
             player.address
         );
-
         await this.attackerContract.attack();
-
     });
 
     after(async function () {
         /** SUCCESS CONDITIONS - NO NEED TO CHANGE ANYTHING HERE */
-
         // Player took all ETH from the pool
         expect(await ethers.provider.getBalance(pool.address)).to.be.equal(0);
         expect(await ethers.provider.getBalance(player.address)).to.be.gt(ETHER_IN_POOL);
