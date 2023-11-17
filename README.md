@@ -59,3 +59,4 @@ it('Execution', async function () {
 
 #Challenge #6
 
+Selfie
