@@ -59,4 +59,4 @@ it('Execution', async function () {
 
 #Challenge #6
 
-Selfie
+Selfie [ Damn Vulnerable DeFi V3 Challenge 6 Solution: Selfie Walkthrough Guide ]
