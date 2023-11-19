@@ -15,6 +15,7 @@ contract DamnValuableTokenSnapshot is ERC20Snapshot {
         _mint(msg.sender, initialSupply);
     }
 
+    // @audit anyone can call this !
     function snapshot() public returns (uint256 lastSnapshotId) {
         lastSnapshotId = _snapshot();
         _lastSnapshotId = lastSnapshotId;
