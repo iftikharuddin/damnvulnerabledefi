@@ -74,3 +74,7 @@ it('Execution', async function () {
     await governance.connect(player).executeAction(1);
 });
 ````
+
+#Challenge #7
+
+Damn Vulnerable DeFi V3 Challenge 7 Solution - Compromised Walkthrough
