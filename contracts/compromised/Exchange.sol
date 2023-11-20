@@ -37,6 +37,8 @@ contract Exchange is ReentrancyGuard {
 
         // Price should be in [wei / NFT]
         uint256 price = oracle.getMedianPrice(token.symbol());
+        // @audit ETH may be stuck in the contract, change < to == ( Medium )
+        // but in this function it is handled below by sending the remaining fund if someone send more than price
         if (msg.value < price) {
             revert InvalidPayment();
         }
